@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const BirthdayGreeting = () => {
-  const [name, setName] = useState('');
+  const [name, setName] = useState(''); // You can remove this line if you don't need 'name'
   const navigate = useNavigate();
 
   const handleNavigateToMemories = () => {
-    if (name) {
-      navigate('/gallery', { state: { name } });
-    }
+    navigate('/gallery'); // Ensure the route is correctly defined in your app
   };
 
   return (
@@ -19,7 +17,7 @@ const BirthdayGreeting = () => {
         </h1>
         <button
           onClick={handleNavigateToMemories}
-          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-lg transition duration-300 shadow-md w-full mt-4" // Added mt-4 for margin-top
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-lg transition duration-300 shadow-md w-full mt-4"
         >
           Go to Memories
         </button>
