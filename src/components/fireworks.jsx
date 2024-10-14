@@ -45,23 +45,7 @@ const Fireworks = () => {
       }
     });
 
-    drawText(ctx);
     requestAnimationFrame(() => animate(ctx, fireworks));
-  };
-
-  // Draw the "Happy Birthday Sruthi" text with responsive font size
-  const drawText = (ctx) => {
-    const fontSize = Math.min(ctx.canvas.width / 15, ctx.canvas.height / 10); // Responsive font size
-    ctx.font = `bold ${fontSize}px Arial`;
-    ctx.fillStyle = 'white';
-    ctx.textAlign = 'center';
-    ctx.fillText('Happy Birthday Sruthi!', ctx.canvas.width / 2, ctx.canvas.height / 2);
-    
-    // Create a glowing effect by drawing the same text in different colors with slight offsets
-    for (let i = 0; i < 20; i++) {
-      ctx.fillStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
-      ctx.fillText('Happy Birthday Sruthi!', ctx.canvas.width / 2 + Math.random() * 5, ctx.canvas.height / 2 + Math.random() * 5);
-    }
   };
 
   useEffect(() => {
