@@ -1,0 +1,100 @@
+/* General layout for center alignment */
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  /* Cake container */
+  .cake-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Cake layers (rectangles) with no gap, rounded corners, and more realistic gradients */
+  .layer {
+    width: 300px;
+    height: 40px;
+    border-radius: 15px;
+    margin-bottom: 0;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+  }
+  
+  .layer-1 {
+    background: linear-gradient(to bottom, #f7d3d1, #f7b7a3); /* Gradient for realism */
+  }
+  
+  .layer-2 {
+    background: linear-gradient(to bottom, #f9b27e, #f49d6e);
+  }
+  
+  .layer-3 {
+    background: linear-gradient(to bottom, #f49355, #f2793a);
+  }
+  
+  .layer-4 {
+    background: linear-gradient(to bottom, #f06e2b, #f05800);
+  }
+  
+  .layer-5 {
+    background: linear-gradient(to bottom, #d94600, #a63a00); /* Darker bottom layer */
+  }
+  
+  /* Candle design with realistic look */
+  .candles {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Spacing between candles */
+    position: absolute;
+    top: -70px; /* Adjust to touch the cake */
+  }
+  
+  .candle {
+    width: 14px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for candles */
+    position: relative;
+  }
+  
+  /* Realistic flame with smoother gradient and inverted drop shape */
+  .flame {
+    width: 16px;
+    height: 30px; /* Taller for more realistic flame */
+    background: radial-gradient(circle at 50% 0%, #ffecb3, #ff9800 50%, transparent 80%);
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50% 50% 40% 40%; /* Inverted drop shape */
+    animation: flicker 1s infinite alternate;
+  }
+  
+  /* Flicker animation for more subtle and realistic flame movement */
+  @keyframes flicker {
+    0% {
+      opacity: 1;
+      transform: scale(1) translateX(-50%);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.05) translateX(-50%);
+    }
+    100% {
+      opacity: 0.8;
+      transform: scale(1.1) translateX(-50%);
+    }
+  }
+  
+  /* Blown-out state for the flame */
+  .blown-out .flame {
+    display: none;
+  }
+  
